@@ -1,0 +1,229 @@
+/*  RESET
+-------------------------------*/
+@import url('normalize.css');
+
+*, *:before, *:after{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.content{
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*HEADER
+-------------------------------*/
+.header{
+    position: fixed;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+    padding: 20px 0;
+}
+
+.header.fixed{
+    padding: 10px 0;
+    background: rgb(39, 51, 87);
+}
+
+.logo{
+    float: left;
+}
+
+.logo img{
+    width: 150px;
+    margin-top: 5px;
+}
+
+/*MENU
+-------------------------------*/
+.nav{
+    float: right;
+    margin-top: 18px;
+}
+
+.nav ul li{
+    display: inline;
+    margin-left: 10px;
+}
+
+.nav-toggle{
+    visibility: hidden;
+}
+
+.nav a{
+    color: #fff;
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all .4s ease-in-out;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.nav a:hover{
+    background: #a70606;
+}
+
+/*SEARCH
+-------------------------------*/
+.search{
+    background-image: url('../images/bg-search.jpg');
+    width: 100%;
+    text-align: center;
+    padding: 200px 0;
+    color: #fff;
+}
+
+.search header h1{
+    font-size: 2.3em;
+    margin-bottom: -8px;
+}
+
+.search header p{
+    margin-top: 15px;
+    font-size: 1.6em;
+}
+
+
+.search form{
+    display: inline-block;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 40px;
+}
+
+.search form input[type="search"]{
+    width: 100%;
+    height: 50px;
+    font-size: inherit;
+    color: #2c3e50;
+    padding: 0 70px 0 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border: none;
+    float: left;
+}
+
+.search form button{
+    background: #a70606;
+     /* O elemento com position: absolute vai ser relativo ao elemento ancestral (qualquer um acima dele hierarquicamente) que tiver definido um position , exceto para valor static . Caso não haja, ele será relativo no ao bloco inicial do documento ( html ).*/
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    border-top-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    border: none;
+    float: right;
+    margin-top: -50px;
+}
+
+
+/*ESTATISTICAS
+-----------------------------*/
+.estatisticas{
+    display: flex;
+    background: rgb(255, 255, 255);
+    height: 130px;
+    align-items: center;
+    margin-top: -60px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,.3);
+}
+
+.estatisticas-item{
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #ccc;
+    
+    align-items: center;
+}
+
+.estatisticas-item:last-child{
+    border-right: none;
+}
+
+.estatisticas-item h1{
+    font-size: 2.1em;
+    margin-bottom: 8px;
+}
+
+.estatisticas-item p{
+    font-size: 1.1em;
+}
+
+
+/*BREACKPOINTS MÁXIMOS
+---------------------------------------*/
+@media (max-width: 767.9px){
+    .search{
+        padding: 110px 0;
+    }
+
+    .estatisticas{
+        flex-direction: column;
+        margin-top: -40px;
+        height: 100%;
+       padding: 10px 0;
+    }
+
+    .estatisticas-item{
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+        width: 70%;
+        padding: 20px 0;
+    }
+
+    .estatisticas-item:last-child{
+        border-bottom: none;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .nav-toggle{
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        float: right;
+        font-size: 1.5em;
+        visibility: visible;
+        transition: all 0.4s ease-in-out;
+        padding-top: 15px;
+    }
+
+    .nav-toggle:hover{
+        color: #a70606;
+    }
+}
+
+
+/*BREACKPOINTS MÁXIMOS
+---------------------------------------*/
+
+
+
+/*AUXILIARES
+-----------------------------*/
+.bg-fixed{
+    background-size: cover; /*ajusta o tamanho da imagem*/
+    background-position: center; /*centraliza*/
+    background-attachment: fixed; /*fixa a imagem*/
+    background-repeat: no-repeat;
+}
